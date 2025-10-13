@@ -127,6 +127,74 @@
     </div>
     
 </div>
+
+<!-- 热门文章排行模块 -->
+<div class="widget">
+  <h3 class="widget-title">热门文章</h3>
+  <ul id="popular-posts" class="post-list">
+    <li>加载中...</li>
+  </ul>
+</div>
+
+<script>
+// 自动获取所有文章（Hexo 专用语法，无需手动维护）
+const posts = [
+  
+    { url: '2025/10/10/hello-world/', title: '使用hexo github搭建一个自己的博客' },
+  
+];
+
+async function loadPopularPosts() {
+  const popularList = document.getElementById('popular-posts');
+  popularList.innerHTML = '';
+
+  const postsWithViews = await Promise.all(
+    posts.map(async (post) => {
+      try {
+        const res = await fetch(`//busuanzi.ibruce.info/analysis/page/pv?url=${post.url}`);
+        const data = await res.json();
+        return { ...post, views: data.pv || 0 };
+      } catch (e) {
+        return { ...post, views: 0 };
+      }
+    })
+  );
+
+  postsWithViews
+    .sort((a, b) => b.views - a.views)
+    .slice(0, 5)
+    .forEach((post, index) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span class="rank">${index + 1}</span>
+        <a href="${post.url}">${post.title}</a>
+        <span class="views">${post.views} 阅读</span>
+      `;
+      popularList.appendChild(li);
+    });
+}
+
+loadPopularPosts();
+</script>
+
+<style>
+.rank {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background: #3B82F6;
+  color: white;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.views {
+  float: right;
+  color: #888;
+  font-size: 0.8em;
+}
+</style>
         </div>
       </div>
       
