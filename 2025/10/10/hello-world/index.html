@@ -242,8 +242,20 @@
      
 
      
-    
-    
+
+<!-- 引入Valine评论系统脚本 -->
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<!-- 评论容器 -->
+<div id="vcomments" style="margin-top: 20px; padding: 10px; border: 1px solid #eee; border-radius: 4px;"></div>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: '你的App ID', // 替换成你LeanCloud应用的App ID
+    appKey: '你的App Key', // 替换成你LeanCloud应用的App Key
+    placeholder: '快来留下你的评论吧～'
+  });
+</script>
+
 
 </div>
      
