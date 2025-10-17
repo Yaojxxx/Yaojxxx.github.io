@@ -14,7 +14,7 @@
 
 
 
-<title>姚建兴</title>
+<title>Tag: linux操作系统的安装 | 姚建兴</title>
 
 
 
@@ -74,7 +74,7 @@
         <ul class="menu-list">
           
             
-              <li class="menu-item menu-item-active">
+              <li class="menu-item">
                 <a href="/">Home</a>
               </li> 
                    
@@ -102,101 +102,45 @@
 
       <div class="main">
         <div class="flex-container">
-          <div class="profile">
-    <div class="profile-image">
-        
-            <img src="/profile_cover.png" alt="featured_image">
-          
-    </div>
-    <div class="post-content profile-content">
-        <div class="profile-title">
-            Welcome to my blog
-        </div>
-        <div class="profile-body">
-            --皮皮虾不扯蛋
-        </div>
-        
-            <div class="profile-link">
-                <a href="/">Home</a> 
-            </div>           
-        
-            <div class="profile-link">
-                <a href="/archives/">Blogs</a> 
-            </div>           
-        
-    </div>
+          <div id="tag">
+  
+
+    <p class="tag-title">
+      / <a href="/tag/">tags</a>
+      / <a href="">linux操作系统的安装</a> /
+    </p>
+    <div class="post-list">
     
+    
+
+        
+
+        
+            <div class="year-title">2025</div>
+        
+
+        <div class="post-list-item">
+            <div class="post-title">
+            <a href="/2025/10/17/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                
+                    linux操作系统
+                
+                </a> 
+            </div>
+            
+            <span class="post-date">Oct 17, 2025</span>
+        </div>
+
+    
+    <div id="paginator">
+        
+    </div>
 </div>
 
-<!-- 热门文章排行模块 -->
-<div class="widget">
-  <h3 class="widget-title">热门文章</h3>
-  <ul id="popular-posts" class="post-list">
-    <li>加载中...</li>
-  </ul>
+
+  
+
 </div>
-
-<script>
-// 自动获取所有文章（Hexo 专用语法，无需手动维护）
-const posts = [
-  
-    { url: '2025/10/10/hello-world/', title: '使用hexo github搭建一个自己的博客' },
-  
-    { url: '2025/10/17/linux操作系统/', title: 'linux操作系统' },
-  
-];
-
-async function loadPopularPosts() {
-  const popularList = document.getElementById('popular-posts');
-  popularList.innerHTML = '';
-
-  const postsWithViews = await Promise.all(
-    posts.map(async (post) => {
-      try {
-        const res = await fetch(`//busuanzi.ibruce.info/analysis/page/pv?url=${post.url}`);
-        const data = await res.json();
-        return { ...post, views: data.pv || 0 };
-      } catch (e) {
-        return { ...post, views: 0 };
-      }
-    })
-  );
-
-  postsWithViews
-    .sort((a, b) => b.views - a.views)
-    .slice(0, 5)
-    .forEach((post, index) => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <span class="rank">${index + 1}</span>
-        <a href="${post.url}">${post.title}</a>
-        <span class="views">${post.views} 阅读</span>
-      `;
-      popularList.appendChild(li);
-    });
-}
-
-loadPopularPosts();
-</script>
-
-<style>
-.rank {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  background: #3B82F6;
-  color: white;
-  border-radius: 50%;
-  margin-right: 8px;
-}
-.views {
-  float: right;
-  color: #888;
-  font-size: 0.8em;
-}
-</style>
         </div>
       </div>
       
