@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+
+
+<title>linux基本操作命令 | 姚建兴</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/menu.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 8.0.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            皮皮虾不扯蛋
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Archive</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/categories/gallery/">Gallery</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<script src="/js/menu.js"></script>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+                
+                    <span class="post-tag">
+                        <a href="/tags/linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
+                            linux基本操作命令
+                        </a>
+                    </span>    
+                           
+            
+        </div>
+        <div class="post-title">
+            
+            
+                linux基本操作命令
+            
+            
+        </div>
+        <span class="post-date">
+            Oct 17, 2025
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="home目录"><a href="#home目录" class="headerlink" title="home目录"></a>home目录</h2><ul>
+<li>它是每一个用户在linux系统的专属目录，默认为：&#x2F;home&#x2F;用户名</li>
+</ul>
+<h2 id="命令-ls"><a href="#命令-ls" class="headerlink" title="命令 ls"></a>命令 ls</h2><ul>
+<li>在命令行中，以平铺的形式展示当前工作目录的下的内容（文件夹或文件）</li>
+<li>ls 命令的参数 -a 显示出隐藏的文件或文件夹，其中以 . 开头的文件或文件夹默认是被隐藏的，需要加入参数 -a 才能被显示出来</li>
+<li>-l 选项，是将文件夹内容以列表的形式展示出来，并展示更多细节</li>
+<li>-h 选项，需要配合其他选项一起使用，以展示文件或文件夹的大小单位</li>
+</ul>
+<h2 id="命令选项的组合使用"><a href="#命令选项的组合使用" class="headerlink" title="命令选项的组合使用"></a>命令选项的组合使用</h2><ul>
+<li>命令的选项是可以组合使用的，如：ls -lh  或 ls -la 等</li>
+<li>这些组合使用的命令等同于： ls -l-a  或 ls -l-h</li>
+</ul>
+<h2 id="当前工作目录"><a href="#当前工作目录" class="headerlink" title="当前工作目录"></a>当前工作目录</h2><p>linux在执行命令的时候，需要一个工作目录，打开命令行程序，默认工作目录是在home目录下的</p>
+<h2 id="cd命令的使用"><a href="#cd命令的使用" class="headerlink" title="cd命令的使用"></a>cd命令的使用</h2><ul>
+<li>cd 命令可以切换当前的工作目录，格式为：cd 参数（想要切换到的文件夹）</li>
+<li>如果cd 后面不接参数，默认是回到home目录，如：cd </li>
+<li>返回上一级目录，参数为.. 如：cd .. 即可返回上一级目录</li>
+</ul>
+<h2 id="pwd命令的使用"><a href="#pwd命令的使用" class="headerlink" title="pwd命令的使用"></a>pwd命令的使用</h2><ul>
+<li>pwd的作用为：输出当前的工作目路，可以理解为当前目录的绝对路径</li>
+<li>pwd命令没有参数，也没有选项，可以直接使用即可</li>
+</ul>
+<h2 id="相对路径和绝对路径"><a href="#相对路径和绝对路径" class="headerlink" title="相对路径和绝对路径"></a>相对路径和绝对路径</h2><ul>
+<li>绝对路径：以根目录为起点，描述路径的方式，以&#x2F;开头</li>
+<li>相对路径：以当前目录做起点，描述路径的方式，路径不需以&#x2F;开头</li>
+<li>使用较多的为相对路径</li>
+</ul>
+<h2 id="特殊路径符"><a href="#特殊路径符" class="headerlink" title="特殊路径符"></a>特殊路径符</h2><ul>
+<li>.表示当前目录，比如cd . 或cd.&#x2F;Deskop</li>
+<li>..表示上一级目录，如：cd ..</li>
+<li>’<del>‘表示用户的home目录，比如:cd ~ 或cd</del>&#x2F;Deskop</li>
+</ul>
+<h2 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h2><ul>
+<li>mkdir命令用于创建新的目录，目录为文件夹</li>
+<li>语法为：mkdir [-p] 参数</li>
+<li>参数为必填项，表示要创建目路的路径，相对，绝对，特殊路径符都可以使用</li>
+<li>-p为可选项，表示自动创建不存在的父目录，适用于创建连续多层的目录</li>
+</ul>
+<h2 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h2><ul>
+<li>用于创建一个新的“文件”（注意：要和mkdir命令区分开来，mkdir创建的是文件夹）</li>
+<li>语法为：touch 参数</li>
+<li>参数为必填项，表示要创建的文件路径，相对，绝对，特殊路径符都可以使用</li>
+</ul>
+<h2 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h2><ul>
+<li>用于查看文件的内容，注意：查看内容多的文件，它是将内容一下将全部的内容都展示出来</li>
+<li>语法：cat 参数</li>
+<li>参数为必填项，表示查看的文件的路径，相对，绝对都行</li>
+</ul>
+<h2 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h2><ul>
+<li>用于查看文件内容，注意：查看内容多的文件，它会将内容从前到后变成可翻页查看的形式，按下空格可以翻下一页，q退出</li>
+<li>语法：more 参数</li>
+<li>参数必填，表示要查看的文件的路径，相对，绝对等都可以使用</li>
+</ul>
+<h2 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h2><ul>
+<li>用于复制文件或文件夹</li>
+<li>语法：cp [-r] 参数1 参数2</li>
+<li>-r选项，可选，用于复制文件夹使用，表示递归</li>
+<li>参数1，表示被复制的文件或文件夹的路径</li>
+<li>参数2，表示复制去的文件或文件夹</li>
+</ul>
+<h2 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h2><ul>
+<li>用于移动文件或文件夹</li>
+<li>语法：mv 参数1 参数2</li>
+<li>参数1，表被移动的文件或文件夹</li>
+<li>参数2，表示要移去的目标文件文件夹，如果目标文件或者文件夹不存在，则会创建一个相应的文件，然后移动进去（相当于给参数1改名）</li>
+</ul>
+<h2 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h2><ul>
+<li>用于删除文件或文件夹</li>
+<li>语法：rm [-r] 参数1 参数2 …..</li>
+<li>[-r]可选选项，加入后可以删除文件夹</li>
+<li>参数1 参数2等，后面可以加多个参数，表示将这些参数一起删除</li>
+<li>参数也支持通配符*，用以模糊匹配，如：rm [-r] text*</li>
+<li>上面一句代码的意思是，将删除text1 和text2等等，只要文件或文件夹前面是text,不管后面是什么内容，都将被删除</li>
+</ul>
+<h2 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h2><ul>
+<li>查看命令的程序文件</li>
+<li>语法：which 要查的命令</li>
+<li>无需选项，只需要输入要查找的哪个命令</li>
+</ul>
+<h2 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h2><ul>
+<li>用于查找指定的文件（不是文件夹）</li>
+<li>按文件名查找：find 起始路径-name “需要查找的文件名”</li>
+<li>按文件大小查找：find 起始路径-size +(-)需要查找的文件大小  （单位可以为（k,m，g）)</li>
+<li>如查找大于1G的文件：find &#x2F;-size +1G   </li>
+<li>如果文件太多，一直在查找，可以按下ctrl+c键即可中断查找</li>
+<li>在查找文件的时候，可能会出现权限不足的的情况，只需要输入：su - root 即可进入管理员身份，注意进入后不要轻易删东西</li>
+<li>查找完，输入：exit 退出管理员身份，回到自己的用户上</li>
+</ul>
+<h2 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h2><ul>
+<li>从文件中通过关键字查找有关键子的那部分内容</li>
+<li>语法：grep [-n] “关键字” 文件路径</li>
+<li>选项-n可选，表示在结果中显示有关键字那部分的行号</li>
+<li>关键字必填，表示要查找的内容，需要加引号，将需要查找的内容包起来</li>
+<li>文件路径必填，表示要在哪个文件查找</li>
+</ul>
+<h2 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h2><ul>
+<li>命令统计文件的行数，单词数量，字节数，字符数等</li>
+<li>语法：wc [-c -m -l -w ] 文件路径</li>
+<li>不带可选项的，默认统计：行数，单词数，字节数</li>
+<li>-c字节数，-m字符数，-l行数，-单词数</li>
+<li>文件路径，被统计的文件路径</li>
+</ul>
+<h2 id="管道符"><a href="#管道符" class="headerlink" title="| 管道符"></a>| 管道符</h2><ul>
+<li>将管道符左边命令结束输出的内容，作为右边的命令输入</li>
+<li>如：统计文件中带有”某关键字词“的结果中有多少个单词</li>
+<li>cat text.txt|grep 某关键字词” （1）|wc -w</li>
+<li>(1)内的路径来自cat text.txt输出结果同过管道符，赋予左边的（1）中作为命令输入，后面也是一样的道理</li>
+<li>完整命令为：cat text.txt|grep “某关键字词”|wc -w</li>
+</ul>
+<h2 id="echo命令"><a href="#echo命令" class="headerlink" title="echo命令"></a>echo命令</h2><ul>
+<li>可以使用echo命令在命令行内输出指定内容（可以理解为python中的print语句）</li>
+<li>语法：echo 输出的结果</li>
+<li>不需要选项，只有一个参数，表示要输出的内容，建议用”” 引号包起来</li>
+</ul>
+<h2 id="反引号符"><a href="#反引号符" class="headerlink" title="&#96;&#96;反引号符"></a>&#96;&#96;反引号符</h2><ul>
+<li>被&#96;包围的内容，会被作为命令执行，而非普通字符</li>
+<li>可以和echo组合使用，如：echo “pwd” 执行后不是输出pwd,而是执行pwd命令</li>
+</ul>
+<h2 id="重定向符"><a href="#重定向符" class="headerlink" title="重定向符"></a>重定向符</h2><ul>
+<li>’&gt;‘,将&gt;左边的命令结果，覆盖写入到符号右边的指定文件中（被覆盖的文件原来的内容将消失，取而代之的是覆盖过来的内容）</li>
+<li>’&gt;&gt;’,将左边的命令结果，追加写入到符号右边的文件中</li>
+</ul>
+<h2 id="tail命令"><a href="#tail命令" class="headerlink" title="tail命令"></a>tail命令</h2><ul>
+<li>查看文件尾部的内容，并可以持续跟踪</li>
+<li>语法：tail [-f -num] 参数1</li>
+<li>‘-f’,表示持续跟踪</li>
+<li>‘-num’,表示查看文件尾部多少行，如果不加的话，默认是尾部十行</li>
+<li>参数1，表示要查看的文的路径</li>
+</ul>
+<h2 id="vim和vi编辑器"><a href="#vim和vi编辑器" class="headerlink" title="vim和vi编辑器"></a>vim和vi编辑器</h2><ul>
+<li>vi\vim编辑器，就是在命令行模式下的文本编辑器，用来编辑按文件</li>
+<li>vim是vi的升级版，一般用vim即可，包含vi的全部功能</li>
+<li>语法：vim 文件路径  或 vi 文件路径</li>
+<li>进入编辑模式后，有三种运行模式</li>
+<li>命令模式，进入编辑后就是命令模式，可以通过键盘快捷键控制文件内容</li>
+<li>输入模式，也就是可以修改文件内容，在命令模式下按 i ,a ,o 即可进入此模式,按Esc即可退回命令模式</li>
+<li>底线模式，通过命令模式进入，可以对文件进行保存，关闭等操作，保存先按shift+: 从输入模式进入底线模式，在输入wq然后回车即可保存修改并退出</li>
+<li>注意：命令模式只能进入输入模式，不可以跳级进入底线模式，输入模式可以进入底线模式和命令模式，底线模式只能进入输入模式</li>
+<li></li>
+</ul>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2025/10/17/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+
+<!-- 引入Valine评论系统脚本 -->
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<!-- 评论容器 -->
+<div id="vcomments" style="margin-top: 20px; padding: 10px; border: 1px solid #eee; border-radius: 4px;"></div>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'dLa7r72dEdfLACvbW5epSGwE-MdYXbMMI', // 替换成你LeanCloud应用的App ID
+    appKey: 'JZtNEIrCE4vPg1aytMXHtVY9', // 替换成你LeanCloud应用的App Key
+    placeholder: '快来留下你的评论吧～'
+  });
+</script>
+
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
